@@ -1,14 +1,14 @@
 # Action 4
 
 This module will create a forth button on mobile called Action4.
-For pc you can use the `shift` key (on pc the button won't be shown)
-Action4 behave exactly like Action2 and Action3
+For pc you can use the `shift` key (on pc the button won't be shown).
+Action4 behave exactly like Action2 and Action3.
 
 ### Usage: 
 
 ```lua
 Modules = {
-	action4 = "github.com/Boumety/modules/action4"
+	action4 = "github.com/Boumety/module/action4"
 }
 
 Client.OnStart = function()
@@ -36,4 +36,4 @@ end
 
 `action4:hide()` Hide the Action4 button
 
-`action4:setButtonIcon(string)` Change the icon of Action4 (must be astring)
+`action4:setButtonIcon(string)` Change the icon of Action4 (must be a string)
