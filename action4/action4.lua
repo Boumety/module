@@ -1,5 +1,7 @@
 mod = {}
 
+-- The code is not perfect, can be improve
+
 local SIZE = 16
 local FRAME_COLOR = Color(200, 200, 200, 180)
 local FILL_COLOR = Color(255, 255, 255, 180)
