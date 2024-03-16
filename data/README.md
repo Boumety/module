@@ -60,8 +60,8 @@ Client.OnStart = function()
   end
 
 	save = function()
-    data:setPlayerData()
-  end
+		data:setPlayerData()
+	end
 
 	Menu:AddDidBecomeActiveCallback(save)
 
@@ -71,7 +71,7 @@ Client.OnStart = function()
 end
 ```
 
-# Functions
+### Functions
 
 If you use the default data tracker, do not use the `name` parameter for each function.
 
