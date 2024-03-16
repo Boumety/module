@@ -4,6 +4,8 @@ This module will create a forth button on mobile called Action4.
 For pc you can use the `shift` key (on pc the button won't be shown).
 Action4 behave exactly like Action2 and Action3.
 
+![Action4.png](https://raw.githubusercontent.com/Boumety/module/main/action4/img/Action4)
+
 ### Usage: 
 
 ```lua
