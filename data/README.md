@@ -1,6 +1,6 @@
 # Data tracker
 
-This module will tracker the data of all incoming players. All the data can then be read. ⚠ Please follow the instructions to setup this module ⚠
+This module will track the data of all incoming players. All the data can then be read. ⚠ Please follow the instructions to setup this module ⚠
 
 ### Usage
 
@@ -84,3 +84,19 @@ If you use the default data tracker, do not use the `name` parameter for each fu
 `data:getPlayerData(username, callback, name)` Take the data of a player, you must use a callback with a parameter that will contain the information.
 
 `data:getAllData(callback, name)` Take all of the data, you must use a callback with a parameter that will contain the information.
+
+### Informations
+
+`d.username`
+
+`d.userID`
+
+`d.first_connection`
+
+`d.last_connection`
+
+`d.playtime`
+
+`d.nb` How many time did the player joined your world
+
+`d.average_session`
