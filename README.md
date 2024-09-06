@@ -19,3 +19,7 @@ Allow you to track data of the players in your game like its average playtime, h
 Quickly create simple and fully customizable bar for your game. It can be used for example for a health bar.
 
 ![Bar.png](https://raw.githubusercontent.com/Boumety/module/main/bar/img/Bar.png)
+
+### Groups 
+
+Add objects to a group to then call a certain function of all of the objects in that group! It allows you to have a simpler and cleaner code.
