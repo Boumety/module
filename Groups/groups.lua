@@ -1,7 +1,7 @@
 local mod = {}
 local groups = {}
 
-function mod.addToGroup(object, name)
+function mod.addToGroup(self, object, name)
    if not groups[name] then
       groups[name] = {}
    end
@@ -10,7 +10,7 @@ function mod.addToGroup(object, name)
    table.insert(group, object)
 end
 
-function mod.callGroup(name, funcName)
+function mod.callGroup(self, name, funcName)
    local group = groups[name]
 
    if not group then
