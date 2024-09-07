@@ -23,3 +23,7 @@ Quickly create simple and fully customizable bar for your game. It can be used f
 ### Groups 
 
 Add objects to a group to then call a certain function of all of the objects in that group! It allows you to have a simpler and cleaner code.
+
+### Component
+
+Create and add components to an object. Components can be use to not have repeating code, for example, you can create one health component and add it to the player and the enemy.
