@@ -2,37 +2,26 @@
 
 ```lua
   Modules = {
-    class = "github.com/Boumety/module/class"
+    class = "github.com/Boumety/module/class:61a1b49"
   }
 ```
 
 Create classes that you can make objects inherit from. It allows you to not repeat code.
 
-`class:createClass(name, config)` Create a class 'name' that has 'config' (table). You can put in the config functions like Tick.
-
-`class:inherit(obj, name)` Make an object inherit the config of a class 'name'.
+`class(config)` This function return a class using config (table). You can then create then create objects that inherit that class. Check example below.
+You can use 'init' that is called when the object is created.
 
 ### Example: 
 
 ```lua
 Client.OnStart = function()
-  class:createClass("plant", {
-    grow = function(self)
-      self:SetParent(nil)
-  
-      local chunk = Shape(Items.voxels.wheat_chunk)
-      chunk:SetParent(World)
-      chunk.Position = self.Position
-    end,
-  })
+	plant = class({
+		grow = function(self)
+			self:SetParent(nil)
+		end,
+	})
 
-  local wheat = Shape(Items.voxels.wheat)
-  class:inherit(wheat, "plant")
-
-  wheat:SetParent(World)
-end
-
-CLient.Action1 = function()
-  wheat:grow()
+	plant = plant(Shape(Items.voxels.wheat))
+	plant:grow()
 end
 ```
