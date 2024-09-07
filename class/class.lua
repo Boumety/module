@@ -12,7 +12,7 @@
 					error("'init' need to be a function")
 				end
 
-				init()
+				init(shape)
 			end
 
 			return shape
