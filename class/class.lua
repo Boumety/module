@@ -1,22 +1,31 @@
-local mod = {}
-local classes = {}
+	local class = {}
 
-function mod.createClass(_, name, config)
-	if classes[name] then
-		error("'" .. name .. "' already exist")
-	end
+	local mt_class = {
+   	 __call = function(t, shape, config)
+			for k, v in pairs(t) do
+				shape[k] = config[k] or v
+			end
 
-	classes[name] = config
-end
+			local init = config["init"] or t["init"]
+			if init then
+				if type(init) ~= "function" then
+					error("'init' need to be a function")
+				end
 
-function mod.inherit(_, obj, name)
-	if not classes[name] then
-		error("'" .. name .. "' is a not a valid class")
-	end
+				init()
+			end
 
-	for k, v in pairs(classes[name]) do
-		obj[k] = v
-	end
-end
+			return shape
+ 	   end
+	}
 
-return mod
+	local mt = {
+   	 __call = function(_, myClass)
+			setmetatable(myClass, mt_class)
+			return myClass
+ 	   end
+	}
+
+
+	setmetatable(class, mt)
+return class
