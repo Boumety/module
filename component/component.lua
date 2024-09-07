@@ -4,7 +4,7 @@ local components = {}
 
 local conf = require("config")
 
-function mod.createComponent(name, config)
+function mod.createComponent(_, name, config)
 	if components[name] then
 		error("'" .. name .. "' already exist")
 	end
@@ -12,7 +12,7 @@ function mod.createComponent(name, config)
 	components[name] = config
 end
 
-function mod.addComponent(obj, name, config)
+function mod.addComponent(_, obj, name, config)
 	if not components[name] then
 		error("'" .. name .. "' is a not a valid component")
 	end
