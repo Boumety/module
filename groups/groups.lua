@@ -20,7 +20,7 @@ function mod.callGroup(self, name, funcName)
    for _, obj in pairs(group) do
       local func = obj[funcName]
       if func then 
-         func()
+         func(obj)
       end
    end
 end
