@@ -17,7 +17,7 @@ In config, `Enter` will be called when the component is added to the object and 
 
 ```lua
 Client.OnStart = function()
-    createComponent("healthComponent", {
+    component:createComponent("healthComponent", {
         Object = nil,
         Enter = function()
         end,
@@ -39,7 +39,7 @@ end
 
 createZombie = function()
     -- other stuff
-    addComponent(zombie, "healthComponent", {Health = 50})
+    component:addComponent(zombie, "healthComponent", {Health = 50})
 end
 
 Pointer.Click = function(pe)
