@@ -1,7 +1,12 @@
-	local class = {}
+local class = {}
 
-	local mt_class = {
-   	 __call = function(t, shape, config)
+local mt_class = {}
+
+
+mt_class.__call =
+
+	function(t, shape, config)
+		if type(shape) == "Shape" or type(shape) == "Object" then
 			for k, v in pairs(t) do
 				shape[k] = config[k] or v
 			end
@@ -16,16 +21,24 @@
 			end
 
 			return shape
- 	   end
-	}
+		elseif type(shape) == "table" then
+			for k, v in pairs(t) do
+				t[k] = shape[k] or v
+			end
 
-	local mt = {
-   	 __call = function(_, myClass)
-			setmetatable(myClass, mt_class)
-			return myClass
- 	   end
-	}
+			setmetatable(shape, mt_class)
+			return shape
+		end
+	end
+
+local mt = {
+    __call = function(_, myClass)
+		setmetatable(myClass, mt_class)
+		return myClass
+	end
+}
 
 
-	setmetatable(class, mt)
+setmetatable(class, mt)
+
 return class
