@@ -26,8 +26,7 @@ mt_class.__call =
 				t[k] = shape[k] or v
 			end
 
-			setmetatable(shape, mt_class)
-			return shape
+			return t
 		end
 	end
 
