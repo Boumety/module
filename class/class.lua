@@ -22,7 +22,7 @@ mt_class.__call =
 
 			return shape
 		elseif type(shape) == "table" then
-			local newClass = t
+			local newClass = {}
 			for k, v in pairs(t) do
 				newClass[k] = v
 			end
@@ -30,7 +30,7 @@ mt_class.__call =
 			for k, v in pairs(shape) do
 				newClass[k] = v
 			end
-
+setmetatable(newClass, mt_class)
 			return newClass
 		end
 	end
