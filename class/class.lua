@@ -22,8 +22,8 @@ mt_class.__call =
 
 			return shape
 		elseif type(shape) == "table" then
-			for k, v in pairs(t) do
-				t[k] = shape[k] or v
+			for k, v in pairs(shape) do
+				t[k] = v
 			end
 
 			return t
