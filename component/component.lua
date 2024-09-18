@@ -1,37 +1,25 @@
-local mod = {}
+local component = {}
 
-local components = {}
+local mt_component = {}
 
-local conf = require("config")
 
-function mod.createComponent(_, name, config)
-	if components[name] then
-		error("'" .. name .. "' already exist")
-	end
-
-	components[name] = config
-end
-
-function mod.addComponent(_, obj, name, config)
-	if not components[name] then
-		error("'" .. name .. "' is a not a valid component")
-	end
-
-	local component = components[name]
-
-	config = conf:merge(component, config)
-
-	obj[name] = config
-
-	obj[name].Object = obj
-
-	if component.Enter then
-		if type(component.Enter) ~= "function" then
-			error("'Enter' should be a function")
+mt_component.__call =
+	function(t, component)
+		local o = Object()
+		for k, v in pairs(t) do
+			o[k] = v
 		end
-
-		component:Enter()
+		return o
 	end
-end
 
-return mod
+local mt = {
+    __call = function(_, myComponent)
+		setmetatable(myComponent, mt_component)
+		return myComponent
+	end
+}
+
+
+setmetatable(class, mt)
+
+return class
