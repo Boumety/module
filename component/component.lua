@@ -20,6 +20,6 @@ local mt = {
 }
 
 
-setmetatable(class, mt)
+setmetatable(component, mt)
 
 return class
