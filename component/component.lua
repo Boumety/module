@@ -22,4 +22,4 @@ local mt = {
 
 setmetatable(component, mt)
 
-return class
+return component
