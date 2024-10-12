@@ -16,7 +16,7 @@ local mt = {
 			s.Rotation = o.Rotation
 
 			s.Physics = true
-			s.CollisionGroups = nil
+			s.CollisionGroups = CollisionGroups(3)
 			s.CollidesWithGroups = Map.CollisionGroups + Player.CollisionGroups
 			s.Bounciness = 0.1
 
