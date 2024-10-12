@@ -8,16 +8,17 @@ mt_class.__call =
 	function(t, shape, config)
 		if type(shape) == "Shape" or type(shape) == "Object" then
 			for k, v in pairs(t) do
-				shape[k] = config[k] or v
+				shape[k] = v
 			end
 
-			local init = config["init"] or t["init"]
+			local init = t["init"]
+		
 			if init then
 				if type(init) ~= "function" then
 					error("'init' need to be a function")
 				end
 
-				init(shape)
+				init(shape, config)
 			end
 
 			return shape
@@ -30,7 +31,9 @@ mt_class.__call =
 			for k, v in pairs(shape) do
 				newClass[k] = v
 			end
-setmetatable(newClass, mt_class)
+		
+			setmetatable(newClass, mt_class)
+		
 			return newClass
 		end
 	end
