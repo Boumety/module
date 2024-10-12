@@ -17,7 +17,7 @@ local mt = {
 
 			s.Physics = true
 			s.CollisionGroups = CollisionGroups(4)
-			s.CollidesWithGroups = Map.CollisionGroups + Player.CollisionGroups + CollisionGroups(4)
+			s.CollidesWithGroups = Map.CollisionGroups + CollisionGroups(4)
 			s.Bounciness = 0.1
 
 			local v = Number3(0, 0, 1) * (50 + math.random() * speed)
