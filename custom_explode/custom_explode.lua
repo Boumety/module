@@ -1,13 +1,12 @@
 local explode = {
-	hierarchyActions = require("hierarchyactions"),
 }
 
-
+local hierarchyActions = require("hierarchyactions")
 
 local mt = {
     __call = function(_, shape, speed, timer)
     local queue = {}
-	self.hierarchyActions:applyToDescendants(shape, { includeRoot = true }, function(o)
+	hierarchyActions:applyToDescendants(shape, { includeRoot = true }, function(o)
 		if type(o) == "Shape" or type(o) == "MutableShape" then
 			local s = Shape(o)
 			World:AddChild(s)
