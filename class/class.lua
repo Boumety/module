@@ -6,7 +6,6 @@ local mt_class = {}
 mt_class.__call =
 
 	function(t, shape, config)
-	print(t, shape, type(shape), config)
 		if type(shape) == "Shape" or type(shape) == "Object" then
 			for k, v in pairs(t) do
 				shape[k] = v
